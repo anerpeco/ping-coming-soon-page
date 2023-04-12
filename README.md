@@ -36,7 +36,7 @@ Desktop
 ### Links
 
 - Solution URL: [GitHub](https://github.com/anerpeco/ping-coming-soon-page)
-- Live Site URL: [Vercel](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://ping-coming-soon-page-anerpeco.vercel.app/)
 
 ## My process
 
