@@ -1,0 +1,323 @@
+/* ------------------------------ */
+/* -------------RESET------------ */
+/* ------------------------------ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* ------------------------------ */
+/* ------------GLOBAL------------ */
+/* ------------------------------ */
+body {
+  background-color: hsl(0, 0%, 100%);
+}
+
+/* ------------------------------ */
+/* ----------TYPOGRAPHY---------- */
+/* ------------------------------ */
+.container {
+  font-family: "Libre Franklin", sans-serif;
+}
+.container h1 {
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 2rem;
+  color: hsl(0, 0%, 59%);
+}
+@media only screen and (min-width: 90rem) {
+  .container h1 {
+    font-size: 3rem;
+    line-height: 3.75rem;
+  }
+}
+.container h1 span {
+  font-weight: 700;
+  color: hsl(209, 33%, 12%);
+}
+.container p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 0.8125rem;
+  color: hsl(209, 33%, 12%);
+}
+@media only screen and (min-width: 90rem) {
+  .container p {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+.container small {
+  font-size: 0.625rem;
+  font-weight: 300;
+  line-height: 0.75rem;
+  color: hsl(0, 0%, 59%);
+}
+@media only screen and (min-width: 90rem) {
+  .container small {
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+  }
+}
+
+.form input {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  color: hsl(209, 33%, 12%);
+}
+@media only screen and (min-width: 90rem) {
+  .form input {
+    font-size: 1rem;
+  }
+}
+.form input ::-moz-placeholder {
+  color: hsl(223, 59%, 83%);
+}
+.form input ::placeholder {
+  color: hsl(223, 59%, 83%);
+}
+.form .form_btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1rem;
+  color: hsl(0, 0%, 100%);
+}
+@media only screen and (min-width: 90rem) {
+  .form .form_btn {
+    font-size: 1rem;
+    line-height: 1.1875rem;
+  }
+}
+.form .error {
+  font-size: 0.625rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: hsl(354, 100%, 66%);
+}
+@media only screen and (min-width: 90rem) {
+  .form .error {
+    font-size: 0.75rem;
+  }
+}
+
+/* ------------------------------ */
+/* ----------COMPONENTS---------- */
+/* ------------------------------ */
+/* button */
+.form_btn {
+  grid-area: btn;
+  display: block;
+  width: calc(100% - 20px);
+  height: 2.5rem;
+  background-color: hsl(223, 87%, 63%);
+  border: none;
+  border-radius: 1.75rem;
+  box-shadow: 0rem 0.3125rem 0.625rem 0.125rem rgba(76, 123, 243, 0.230414);
+  margin-top: 0.625rem;
+}
+@media only screen and (min-width: 90rem) {
+  .form_btn {
+    width: 100%;
+    height: 3.5rem;
+    margin-top: 0;
+  }
+}
+.form_btn:hover {
+  opacity: 77%;
+  cursor: pointer;
+}
+
+/* ------------------------------ */
+/* ------------LAYOUT------------ */
+/* ------------------------------ */
+/* form */
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas: "input" "error" "btn";
+}
+@media only screen and (min-width: 90rem) {
+  .form {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas: "input input btn" "error error error";
+  }
+}
+.form input {
+  grid-area: input;
+  width: calc(100% - 1.25rem);
+  height: 2.5rem;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(223, 100%, 88%);
+  border-radius: 1.75rem;
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.0001);
+  padding-left: 2rem;
+}
+.form input:focus {
+  outline: none;
+  border-width: 2px;
+}
+@media only screen and (min-width: 90rem) {
+  .form input {
+    width: calc(100% - 1rem);
+    height: 3.5rem;
+    padding-left: 1.875rem;
+  }
+}
+.form .error {
+  grid-area: error;
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 90rem) {
+  .form .error {
+    text-align: start;
+    padding-left: 1.875rem;
+    margin-bottom: 0;
+    margin-top: 6px;
+  }
+}
+.form .hidden {
+  display: none;
+}
+.form .error_input {
+  border: 2px solid hsl(354, 100%, 66%) !important;
+}
+
+/* ------------------------------ */
+/* ----------HOME PAGE---------- */
+/* ----------------------------- */
+.container {
+  max-width: 23.4375rem;
+  margin-inline: auto;
+  padding: 5.0625rem 1.75rem 2.3125rem;
+  text-align: center;
+}
+@media only screen and (min-width: 90rem) {
+  .container {
+    max-width: 90rem;
+    padding: 5rem 25rem 3.0625rem;
+  }
+}
+.container .logo {
+  width: 3.5rem;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 90rem) {
+  .container .logo {
+    width: 5.625rem;
+    margin-bottom: 2.5rem;
+  }
+}
+.container p {
+  margin-top: 0.9375rem;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 90rem) {
+  .container p {
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+  }
+}
+.container .illustration {
+  margin-top: 4.5rem;
+  margin-bottom: 7.5rem;
+}
+@media only screen and (min-width: 90rem) {
+  .container .illustration {
+    margin-top: 5.875rem;
+    margin-bottom: 4.5rem;
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 0.7813rem;
+       column-gap: 0.7813rem;
+  margin-bottom: 1.625rem;
+}
+.social i {
+  width: 1.9375rem;
+  height: 1.9375rem;
+  border: 0.918357px solid hsla(223, 87%, 63%, 0.15);
+  border-radius: 50%;
+  font-size: 0.9375rem;
+  color: hsl(223, 87%, 63%);
+  padding-top: 8px;
+}
+.social i:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(223, 87%, 63%);
+}/*# sourceMappingURL=style.css.map */
